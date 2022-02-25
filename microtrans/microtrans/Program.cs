@@ -1,11 +1,11 @@
 ﻿using System;
 
-int money = 100000;
+int money = 100;
 
 string[] itemName = {"Pair of Boots", "Helmet", "Potion"};
 string[] itemPlural = {"Pair(s) of Boots", "helmet(s)", "potion(s)"};
 int[] itemPrice = {50, 100, 25};
-int[] itemQuantity = {3, 1, 50};
+int[] itemQuantity = {3, 1, 100};
 int chosenOption = -1;
 bool outOfStock = false;
 bool buying = false;
@@ -78,7 +78,7 @@ while (soldOut == false) {
               {
                 if (chosenQuantity == 0)
                 {
-                  System.Console.WriteLine("wat");
+                  System.Console.WriteLine($"Numbers from 1 - {itemQuantity[chosenOption]} only!");
                   buying = false;
                 } else {
                   Console.WriteLine($"There are only {itemQuantity[chosenOption]} {itemPlural[chosenOption]} left.");
@@ -156,6 +156,8 @@ bool AskBuy(int money)
     } 
 }
 
+  // Lists status for items
+
 void ItemList(string[] itemName, string[] itemPlural, int[] itemPrice, int[] itemQuantity, int chosenOption){
 
 
@@ -185,6 +187,8 @@ void ItemList(string[] itemName, string[] itemPlural, int[] itemPrice, int[] ite
     
   }
 }
+
+  // Checks if all of the items in the store are sold out
 bool ShopEmpty(int[] itemQuantity)
 {
   int facts = 0;
